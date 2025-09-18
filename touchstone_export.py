@@ -46,11 +46,7 @@ with Hfss(
     for sw_var in sw_vals:
         for mt_var in mt_vals:
             for dt_var in dt_vals:
-                variations = {
-                    "SW": sw_var,
-                    "MT": mt_var,
-                    "DT": dt_var,
-                }
+                
                 variations = ["SW", "MT", "DT"]
                 variations_value = [sw_var, mt_var, dt_var]
                 var_label = f"{sw_var}W_{mt_var}T_{dt_var}H"
@@ -74,3 +70,4 @@ with Hfss(
     hfss.save_project()
 
 print(f"Project finished ✨")
+
