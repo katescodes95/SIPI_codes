@@ -483,10 +483,7 @@ with Hfss(
 
     for sw_var in sw_vals:
         for mt_var in mt_vals:
-            variations = {
-                "$sw": sw_var,
-                "$mt": mt_var,
-            }
+
             variations_value = [sw_var, mt_var]
             var_label = f"{sw_var}W_{mt_var}T_2.0H"
 
@@ -1087,14 +1084,6 @@ with Hfss(
     hfss.save_project()
 
     # Optimetrics analysis and export of files
-    def current_sweep(start, stop, step, unit = ""):
-        values = []
-        val = start
-        while val <= stop + 1e-12:
-            values.append(f"{val}{unit}")
-            val += step
-        return values
-
     sw_vals = current_sweep(2, 3, 0.5, "um") # Edit this
     mt_vals = current_sweep(2, 3, 0.5, "um") # Edit this
 
@@ -1102,10 +1091,7 @@ with Hfss(
 
     for sw_var in sw_vals:
         for mt_var in mt_vals:
-            variations = {
-                "$sw": sw_var,
-                "$mt": mt_var,
-            }
+
             variations_value = [sw_var, mt_var]
             var_label = f"{sw_var}W_{mt_var}T_2.0H"
 
@@ -1159,3 +1145,4 @@ with Hfss(
 
 
 print(f"Project finished ✨")
+
