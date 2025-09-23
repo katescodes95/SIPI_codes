@@ -484,6 +484,7 @@ with Hfss(
     for sw_var in sw_vals:
         for mt_var in mt_vals:
 
+            # Definitions
             variations = {
                 "$sw": sw_var,
                 "$mt": mt_var,
@@ -1096,11 +1097,16 @@ with Hfss(
     for sw_var in sw_vals:
         for mt_var in mt_vals:
 
+            # Definitions
+            variations = {
+                "$sw": sw_var,
+                "$mt": mt_var,
+            }
             variations_value = [sw_var, mt_var]
             var_label = f"{sw_var}W_{mt_var}T_2.0H"
 
             # Export touchstone file
-            touchstone_name = f"GSG_{sw_str}W_{ss_str}S_{mt_str}T_{dh_str}H_{var_label}.s40p" # Edit this
+            touchstone_name = f"GSG_{var_label}.s40p" # Edit this
             touchstone_save_path = export_ts_to_dir / touchstone_name
 
             hfss.export_touchstone(
@@ -1149,5 +1155,3 @@ with Hfss(
 
 
 print(f"Project finished ✨")
-
-
