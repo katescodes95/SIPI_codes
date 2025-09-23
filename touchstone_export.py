@@ -21,7 +21,7 @@ export_ts_to_dir.mkdir(parents = True, exist_ok = True)
 
 # Open (or create) project/design in a fresh AEDT Desktop session
 with Hfss(
-    project = r"D:\02_Users\UCIe\UCIE_channel_model.aedt", # Edit this
+    project = r"D:\02_Users\UCIe\01_channel_model.aedt", # Edit this
     design = f"GSG_6Layer", # Edit this
     solution_type = "Terminal",
     version = "2025.1",
@@ -70,4 +70,5 @@ with Hfss(
     hfss.save_project()
 
 print(f"Project finished ✨")
+
 
