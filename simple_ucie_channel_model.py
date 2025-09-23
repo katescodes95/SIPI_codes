@@ -27,12 +27,12 @@ mt_str = str(mt)
 dh_str = str(dh)
 
 # Folder to which the results are exported
-csv_dir = r"D:\02_Users\UCIe\csv" # Edit this
+csv_dir = r"D:\02_Users\UCIe\01_channel_model\csv" # Edit this
 export_csv_to_dir = Path(csv_dir)
 export_csv_to_dir.mkdir(parents = True, exist_ok = True)
 
 # Folder to which the touchstone files are exported
-touchstone_dir = r"D:\02_Users\UCIe\touchstone" # Edit this
+touchstone_dir = r"D:\02_Users\UCIe\01_channel_model\touchstone" # Edit this
 export_ts_to_dir = Path(touchstone_dir)
 export_ts_to_dir.mkdir(parents = True, exist_ok = True)
 
@@ -46,7 +46,7 @@ with Hfss(
 ) as hfss:
 
     # Save project to path
-    project_dir = Path(r"D:\02_Users\UCIe") # Edit this
+    project_dir = Path(r"D:\02_Users\UCIe\01_channel_model") # Edit this
     project_name = f"ucie_channel_{sw_str}W_{ss_str}S_{mt_str}T_{dh_str}H.aedt"
     project_save_path = project_dir / project_name
 
@@ -1155,3 +1155,4 @@ with Hfss(
 
 
 print(f"Project finished ✨")
+
