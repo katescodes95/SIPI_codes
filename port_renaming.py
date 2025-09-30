@@ -27,7 +27,7 @@ for case_number, filename in enumerate(touchstone_files, start = 1):
     file_path = os.path.join(folder_path, filename)
     
     # Read the touchstone file
-    with open(file_path, 'r') as f:
+    with open(file_path, "r") as f:
         lines = f.readlines()
     
     # Rename ports in the touchstone file
@@ -60,3 +60,4 @@ for case_number, filename in enumerate(touchstone_files, start = 1):
 
 
 print(f"Processed {len(touchstone_files)} files. Case mapping written to {csv_path}.")
+
