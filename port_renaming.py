@@ -15,7 +15,7 @@ import os
 import csv
 
 # Folder containing touchstone files
-folder_path = r"C:\Users\1240204\Documents\4.UCIe\Simulation\GW_same_SW"
+folder_path = r"path/to/touchstone/files"
 
 # Get list of touchstone files in the folder
 touchstone_files = sorted([f for f in os.listdir(folder_path) if f.endswith(".s40p")])
@@ -60,4 +60,5 @@ for case_number, filename in enumerate(touchstone_files, start = 1):
 
 
 print(f"Processed {len(touchstone_files)} files. Case mapping written to {csv_path}.")
+
 
