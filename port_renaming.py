@@ -1,5 +1,5 @@
 """
-Project: Port Renaming in Touchstone Files for Use in ACVS
+Project: Port Renaming from Touchstone Files for Use in ACVS
 Author: Youngeun Na
 Date: 2025-09-30
 Version: 1.0
@@ -15,7 +15,7 @@ import os
 import csv
 
 # Folder containing touchstone files
-folder_path = r"path/to/touchstone/files"
+folder_path = r"path/to/touchstone/files" #Edit path
 
 # Get list of touchstone files in the folder
 touchstone_files = sorted([f for f in os.listdir(folder_path) if f.endswith(".s40p")])
@@ -46,19 +46,21 @@ for case_number, filename in enumerate(touchstone_files, start = 1):
     csv_path = os.path.join(folder_path, "case_mapping.csv")
     with open(file_path, "w") as file:
         file.writelines(renamed_lines)
+
+    # Rename the file name by adding case ID prefix
+    new_filename = f"{case_id}_{filename}"
+    new_file_path = os.path.join(folder_path, new_filename)
+    os.rename(file_path, new_file_path)
     
     # Append to CSV rows
     touchstone_name = os.path.splitext(filename)[0]
-    csv_rows.append([touchstone_name, case_id])
+    csv_rows.append([case_id, touchstone_name])
 
     # Write CSV file
     csv_path = os.path.join(folder_path, "case_mapping.csv")
     with open(csv_path, "w", newline="") as f:
         writer = csv.writer(f)
-        writer.writerow(["Touchstone File", "Case #"])
+        writer.writerow(["Case", "Touchstone File"])
         writer.writerows(csv_rows)
 
-
 print(f"Processed {len(touchstone_files)} files. Case mapping written to {csv_path}.")
-
-
