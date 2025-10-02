@@ -35,12 +35,12 @@ for case_number, filename in enumerate(touchstone_files, start = 1):
     for line in lines:
         if line.strip().startswith("! Port["):
             # Example: "! Port[1] = S11_T1"
-            left, right = line.split("=", 1)  # split only once
+            left, right = line.split("=", 1)  # Split only once
             right = right.strip()
             renamed_line = f"{left}= {case_id}_{right}\n"
             renamed_lines.append(renamed_line)
         else:
-            renamed_lines.append(line)  # keep all other lines untouched
+            renamed_lines.append(line)  # Keep all other lines untouched
     
     # Overwrite file with updated port mappings
     csv_path = os.path.join(folder_path, "case_mapping.csv")
@@ -64,3 +64,4 @@ for case_number, filename in enumerate(touchstone_files, start = 1):
         writer.writerows(csv_rows)
 
 print(f"Processed {len(touchstone_files)} files. Case mapping written to {csv_path}.")
+
