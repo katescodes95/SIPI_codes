@@ -1041,11 +1041,11 @@ with Hfss(
     expressions_for_RL = ["dB(St(S11_T1,S11_T1))", "dB(St(S13_T1,S13_T1))", "dB(St(S15_T1,S15_T1))", "dB(St(S17_T1,S17_T1))", "dB(St(S19_T1,S19_T1))",
                         "dB(St(S22_T1,S22_T1))", "dB(St(S24_T1,S24_T1))", "dB(St(S26_T1,S26_T1))", "dB(St(S28_T1,S28_T1))", "dB(St(S2A_T1,S2A_T1))",
                         "dB(St(S31_T1,S31_T1))", "dB(St(S33_T1,S33_T1))", "dB(St(S35_T1,S35_T1))", "dB(St(S37_T1,S37_T1))", "dB(St(S39_T1,S39_T1))",
-                        "dB(St(S12_T1,S12_T1))", "dB(St(S14_T1,S14_T1))", "dB(St(S16_T1,S16_T1))", "dB(St(S18_T1,S18_T1))", "dB(St(S1A_T1,S1A_T1))"]
+                        "dB(St(S42_T1,S42_T1))", "dB(St(S44_T1,S44_T1))", "dB(St(S46_T1,S46_T1))", "dB(St(S48_T1,S48_T1))", "dB(St(S4A_T1,S4A_T1))"]
     expressions_for_IL = ["dB(St(S11_T2,S11_T1))", "dB(St(S12_T2,S12_T1))", "dB(St(S13_T2,S13_T1))", "dB(St(S14_T2,S14_T1))", "dB(St(S15_T2,S15_T1))",
                         "dB(St(S22_T2,S22_T1))", "dB(St(S24_T2,S24_T1))", "dB(St(S26_T2,S26_T1))", "dB(St(S28_T2,S28_T1))", "dB(St(S2A_T2,S2A_T1))",
                         "dB(St(S31_T2,S31_T1))", "dB(St(S32_T2,S32_T1))", "dB(St(S33_T2,S33_T1))", "dB(St(S34_T2,S34_T1))", "dB(St(S35_T2,S35_T1))",
-                        "dB(St(S12_T2,S12_T1))", "dB(St(S14_T2,S14_T1))", "dB(St(S16_T2,S16_T1))", "dB(St(S18_T2,S18_T1))", "dB(St(S1A_T2,S1A_T1))"]
+                        "dB(St(S42_T2,S42_T1))", "dB(St(S44_T2,S44_T1))", "dB(St(S46_T2,S46_T1))", "dB(St(S48_T2,S48_T1))", "dB(St(S4A_T2,S4A_T1))"]
 
     report1 = hfss.post.reports_by_category.terminal_solution(
         expressions = expressions_for_RL,
@@ -1155,4 +1155,5 @@ with Hfss(
 
 
 print(f"Project finished ✨")
+
 
